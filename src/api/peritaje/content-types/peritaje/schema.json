@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "peritajes",
+  "info": {
+    "singularName": "peritaje",
+    "pluralName": "peritajes",
+    "displayName": "peritaje",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_peritaje": {
+      "type": "biginteger",
+      "required": true,
+      "unique": true
+    },
+    "placa": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::vehiculo.vehiculo"
+    },
+    "fecha": {
+      "type": "date",
+      "required": true
+    },
+    "cedula_identidad": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::client.client"
+    }
+  }
+}

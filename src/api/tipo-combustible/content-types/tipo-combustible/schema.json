@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tipo_combustibles",
+  "info": {
+    "singularName": "tipo-combustible",
+    "pluralName": "tipo-combustibles",
+    "displayName": "tipo_combustible"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_tipo_combustible": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "nombre_tipo_combustible": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

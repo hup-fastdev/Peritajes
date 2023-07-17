@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "calificacions",
+  "info": {
+    "singularName": "calificacion",
+    "pluralName": "calificacions",
+    "displayName": "calificacion"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_calificacion": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "nombre_calificacion": {
+      "type": "string",
+      "required": true
+    },
+    "observacion": {
+      "type": "text"
+    }
+  }
+}

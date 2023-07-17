@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "partes_categorias",
+  "info": {
+    "singularName": "partes-categoria",
+    "pluralName": "partes-categorias",
+    "displayName": "partes_categoria"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_categoria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::categoria.categoria"
+    },
+    "id_parte_cat": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "nombre_parte": {
+      "type": "string",
+      "required": true
+    },
+    "observacion": {
+      "type": "string"
+    }
+  }
+}

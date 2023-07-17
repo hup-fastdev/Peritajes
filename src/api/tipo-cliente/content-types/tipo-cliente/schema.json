@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tipo_clientes",
+  "info": {
+    "singularName": "tipo-cliente",
+    "pluralName": "tipo-clientes",
+    "displayName": "tipo_cliente"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "id_tipo_cliente": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "nombre_tipo_cliente": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

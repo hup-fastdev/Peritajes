@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "collectionName": "vehiculos",
+  "info": {
+    "singularName": "vehiculo",
+    "pluralName": "vehiculos",
+    "displayName": "vehiculo"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "placa": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "marca": {
+      "type": "string",
+      "required": true
+    },
+    "modelo": {
+      "type": "string",
+      "required": true
+    },
+    "anio": {
+      "type": "integer",
+      "required": true
+    },
+    "kilometraje": {
+      "type": "biginteger",
+      "required": true
+    },
+    "nro_chasis": {
+      "type": "string",
+      "required": true
+    },
+    "nro_motor": {
+      "type": "string",
+      "required": true
+    },
+    "id_tipo_combustible": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tipo-combustible.tipo-combustible"
+    },
+    "id_tipo_carroceria": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tipo-carroceria.tipo-carroceria"
+    },
+    "id_tipo_clase": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tipo-clase.tipo-clase"
+    },
+    "id_tipo_servicio": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tipo-servicio.tipo-servicio"
+    },
+    "cilindraje": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "required": true
+    },
+    "lugar_matriculacion": {
+      "type": "string",
+      "required": true
+    },
+    "id_tipo_transmision": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::tipo-transmision.tipo-transmision"
+    }
+  }
+}
