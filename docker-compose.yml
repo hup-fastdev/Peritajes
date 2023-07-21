@@ -4,12 +4,13 @@ services:
   mysqldb:
     image: mysql:5.7
     restart: unless-stopped
-    env_file: ./.env
+    env_file: 
+      - ./.env
     environment:
-      - MYSQL_ROOT_PASSWORD=$MYSQLDB_ROOT_PASSWORD
-      - MYSQL_DATABASE=$MYSQLDB_DATABASE
+      - MYSQL_ROOT_PASSWORD= ${DATABASE_PASSWORD}
+      - MYSQL_DATABASE= ${DATABASE_NAME}
     ports:
-      - $MYSQLDB_LOCAL_PORT:$MYSQLDB_DOCKER_PORT
+      - ${DATABASE_PORT}:${DATABASE_PORT_DOCKER}
     volumes:
       - db:/var/lib/mysql
   app:
@@ -17,21 +18,21 @@ services:
       - mysqldb
     build: .
     restart: on-failure   
-    env_file: ./.env
+    env_file: 
+      - ./.env
     ports: 
-      - $SPRING_LOCAL_PORT:$SPRING_DOCKER_PORT
-      - "4545:8000"
+      - ${STRAPI_PORT}:${STRAPI_PORT}
     environment:
-    #  DATABASE_CLIENT: ${DATABASE_CLIENT}
-    #  DATABASE_HOST: strapiDB
-    #  DATABASE_PORT: ${DATABASE_PORT}
-    #  DATABASE_NAME: ${DATABASE_NAME}
-    #  DATABASE_USERNAME: ${DATABASE_USERNAME}
-    #  DATABASE_PASSWORD: ${DATABASE_PASSWORD}
+      DATABASE_HOST: ${DATABASE_HOST}
+      DATABASE_PORT: ${DATABASE_PORT}
+      DATABASE_NAME: ${DATABASE_NAME}
+      DATABASE_USERNAME: ${DATABASE_USERNAME}
+      DATABASE_PASSWORD: $DATABASE_PASSWORD
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}
       HOST: ${HOST}
+      STRAPI_PORT: ${STRAPI_PORT}
     volumes:
       - ./config:/opt/app/config
       - ./src:/opt/app/src
