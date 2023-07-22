@@ -1,4 +1,5 @@
 #!/bin/sh
+git pull
 npm install strapi -g
 npm run build
 cp ./devops/prd/.env .
